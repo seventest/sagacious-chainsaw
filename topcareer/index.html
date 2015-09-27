@@ -8,6 +8,20 @@
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 < ![endif]-->
+
+<script type="text/javascript">
+    var savedimgsrc;
+function hover() {
+    savedimgsrc = document.getElementById("theimage").getAttribute('src');
+    document.getElementById("theimage").setAttribute('src', '2.jpg');
+}
+
+function out() {
+    document.getElementById("theimage").setAttribute('src', savedimgsrc);
+}
+</script>
+
+
 <style type="text/css">
 
 
@@ -207,6 +221,11 @@ article a:hover{
 	-moz-opacity: 0.6;
 	-webkit-opacity: 0.6;
 }
+
+.company:hover #theimage{
+    content : url(1.jpg) ;
+}
+
 .company:hover .company_img img{
 	transform:scale(1.05);
 	-webkit-transform:scale(1.05);
@@ -250,7 +269,7 @@ article a:hover{
 </nav>
 
 <article>
-	<div class="company">
+	<div class="company" onmouseover="hover();" onmouseout="out();">
 		<a href="#">
 			<div class="company_img"><img src="img/company_img1.png" alt="company1"></div>
 			<div class="company_logo"><img src="img/logo1.png" alt="company1"></div>
@@ -260,7 +279,7 @@ article a:hover{
 	</div>
 	<div class="company">
 		<a href="#">
-			<div class="company_img"><img src="img/company_img2.png" alt="company1"></div>
+			<div class="company_img"><img id="theimage" src="img/company_img2.png" alt="company1"></div>
 			<div class="company_logo"><img src="img/logo2.png" alt="company1"></div>
 			<div class="company_intro">面接を受けられる「就活検定、１対１で個別に企業研究や面接を受けられる「就活検定、１対１で個別に企業研究や</div>
 			<div class="company_in"><img src="img/triangle.png" alt="company1"></div>
